@@ -6,7 +6,7 @@ RUN apk add --no-cache --virtual .fetch-deps \
 		curl \
 		tar \
 	\
-	&& curl -sSL "https://caddyserver.com/download/linux/amd64" | tar --no-same-owner --directory=/usr/bin/ --extract --gunzip caddy \
+	&& curl -sSL "https://caddyserver.com/download/linux/amd64?license=personal&telemetry=off" | tar --no-same-owner --directory=/usr/bin/ --extract --gunzip caddy \
 	&& chmod 0755 /usr/bin/caddy \
 	&& /usr/bin/caddy -version \
 	&& apk del .fetch-deps
